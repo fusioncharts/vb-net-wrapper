@@ -16,7 +16,7 @@ Partial Class Samples_MasterPageExample_Default
         'You can use complex code to render chart taking data streaming from 
         'database etc.
 
-        ' Initialize chart - Radar Chart with the JSON string
+        ' Initialize chart - Candlestick Chart with the JSON string
         Dim sales As New Chart("candlestick", "myChart", "700", "350", "jsonurl", "../../Data/MasterPageData.json")
         ' Render the chart
         Literal1.Text = sales.Render()

@@ -20,7 +20,7 @@ Partial Class Samples_DrillDownExample_Default
         ' your own ASP.NET scripts virtually relay the JSON / XML data document.
         ' For a head-start, we've kept this example very simple.
 
-        ' Initialize chart - Column 3D Chart with data from Data/DrillDownSSData.json
+        ' Initialize chart - Column 2D Chart with data from Data/DrillDownSSData.json
         Dim sales As New Chart("column2d", "myChart", "600", "350", "jsonurl", "../../Data/DrillDownSSData.json")
         ' Render the chart
         Literal1.Text = sales.Render()

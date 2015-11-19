@@ -78,7 +78,7 @@ Partial Class Samples_ArrayExample_CombinationXML
         strXML.Append(strDataQty.ToString())
         strXML.Append("</chart>")
 
-        ' Initialize chart - Column 3D Chart with data from Data/Data.json
+        ' Initialize chart - Multi-series 2D Dual Y Combination Chart with data from Data/Data.json
         Dim sales As New Chart("mscombidy2d", "myChart", "600", "350", "xml", strXML.ToString())
         ' Render the chart
         Literal1.Text = sales.Render()

@@ -6,6 +6,7 @@
 <head runat="server">
     <title>FusionCharts with Database</title>
     <script type="text/javascript" src="../../fusioncharts/fusioncharts.js"></script>
+    <!-- End --> 
 </head>
 <body>
     Fusioncharts will render below

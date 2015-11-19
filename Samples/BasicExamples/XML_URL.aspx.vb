@@ -20,7 +20,7 @@ Partial Class Samples_BasicExamples_XML_URL
         ' your own ASP.NET scripts virtually relay the JSON / XML data document.
         ' For a head-start, we've kept this example very simple.
 
-        ' Initialize chart - Column 3D Chart with data from Data/Data.json
+        ' Initialize chart - Real-time Angular Chart with data from Data/Data.json
         Dim sales As New Chart("angulargauge", "myChart", "600", "350", "xmlurl", "../../Data/Data.xml")
         ' Render the chart
         Literal1.Text = sales.Render()

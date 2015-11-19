@@ -55,10 +55,10 @@ Partial Class Samples_DBExample_index
             jsonData.AppendFormat("{{" + "'label': '{0}'" + "}}", oRs.ReadData("dd").ToString())
         End While
 
-        'Close the database connection.
+        'Closing the database connection.
         oRs.ReadData.Close()
 
-        'Close the catgories object.
+        'Closing the catgories object.
         jsonData.Append("]" + "}" + "],")
 
         ' Initialize the Dataset object.
@@ -123,7 +123,7 @@ Partial Class Samples_DBExample_index
         ' Close the JSON object.
         jsonData.Append("]" + "}")
 
-        ' Initialize chart - MSLine Chart data pulling from database
+        ' Initialize chart - Multi-series Line 2D Chart data pulling from database
         Dim factoryOutput As New Chart("msline", "myChart", "600", "350", "json", jsonData.ToString())
         ' Render the chart
         Literal1.Text = factoryOutput.Render()

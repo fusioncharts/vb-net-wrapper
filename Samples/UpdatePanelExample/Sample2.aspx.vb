@@ -19,7 +19,7 @@ Imports FusionCharts.Charts
 Partial Class Samples_UpdatePanelExample_Sample2
     Inherits System.Web.UI.Page
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'This will execute first time the page loads and not on ajax post back calls
+        'This will execute first time on page load and not on ajax post back calls
         If Not IsPostBack Then
             ' Show a blank Column2D Chart at first
             showColumnChart()
@@ -28,7 +28,7 @@ Partial Class Samples_UpdatePanelExample_Sample2
             ' store ASP.NET Ajax special HTTP request
             ' __EVENTARGUMENT holds value passed by JS function -__doPostBack
             'The value can be like "drillDown$1"
-            'We take $ as delimiter so we get drillDown as the function to call
+            'We take $ as delimiter so we can get drillDown as the function to call
             'and 1 as the factory id. It can vary depending on the pie slice clicked.
 
             Dim sEventArguments As [String] = Request("__EVENTARGUMENT")
@@ -61,7 +61,7 @@ Partial Class Samples_UpdatePanelExample_Sample2
             strXML.AppendFormat("<chart slicingDistance='0' caption='Factory wise Production' subcaption='Total Production in Units' formatNumberScale='0' pieSliceDepth='25'>")
             ' fetch data reader
             While oRs.ReadData.Read()
-                ' create link to javascript  function for ajax post back call
+                ' creating a link to javascript function for ajax post back call
                 Dim link As String = "javascript:updateChart(" + oRs.ReadData("FactoryId").ToString() + ")"
 
                 'add set element 
@@ -74,7 +74,7 @@ Partial Class Samples_UpdatePanelExample_Sample2
             ' close chart element
             strXML.Append("</chart>")
 
-            ' create pie chart and store it to output string
+            ' creating pie chart and store it to output string
             Dim sales As New Chart("pie3d", "myChart1", "440", "350", "xml", strXML.ToString())
             Dim outPut As String = sales.Render()
 
@@ -91,13 +91,13 @@ Partial Class Samples_UpdatePanelExample_Sample2
         'SQL Query for Factory Details for the factory Id passed as parameter
         Dim strSQL As String = (Convert.ToString("select  a.FactoryId,a.FactoryName,b.DatePro,b.Quantity from Factory_Master a,Factory_Output b where a.FactoryId=b.FactoryID and a.FactoryId=") & FacID) + " order by b.DatePro"
 
-        ' Create data reader
+        ' Creating a data reader
         Dim oRs As New DbConn(strSQL)
 
         'strXML for storing XML
         Dim strXML As New StringBuilder()
 
-        'Add Chart element
+        'Adding Chart element
         strXML.AppendFormat("<chart caption='Factory wise Production' subcaption='Factory {0} : Daily Production' xAxisName='Day' yAxisName='Units' rotateLabels='1' bgAlpha='100' bgColor='ffffff' showBorder='0' showvalues='0' yAxisMaxValue='200'>", FacID)
         'Iterate through database
         While oRs.ReadData.Read()
@@ -111,7 +111,7 @@ Partial Class Samples_UpdatePanelExample_Sample2
         ' close chart element
         strXML.Append("</chart>")
 
-        ' create Column2D chart and srore it to output string
+        ' creating Column2D chart and srore it to output string
         Dim sales As New Chart("column2d", "myChart2", "440", "350", "xml", strXML.ToString())
         Dim outPut As String = sales.Render()
 

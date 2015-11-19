@@ -17,7 +17,7 @@ Imports FusionCharts.Charts
 Partial Class Samples_UpdatePanelExample_Sample1
     Inherits System.Web.UI.Page
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'This will execute first time the page loads and not on ajax post back calls
+        'This will execute first time on page load and not on ajax post back calls
         If Not IsPostBack Then
             'Generate Radio button from the available Factory names in Database
             'Get Factory names from Factory_Master
@@ -34,7 +34,7 @@ Partial Class Samples_UpdatePanelExample_Sample1
             rs1.ReadData.Close()
 
 
-            'Select First radio button as dafult value
+            'Select First radio button as a dafult value
             RadioButtonList1.Items(0).Selected = True
 
             'Show chart as per selected radio button.
@@ -78,21 +78,22 @@ Partial Class Samples_UpdatePanelExample_Sample1
             strXML.AppendFormat("<set label='{0}' value='{1}' />", Convert.ToDateTime(oRs.ReadData("DatePro")).ToString("d/M"), oRs.ReadData("Quantity").ToString())
         End While
 
-        'Close chart element
+        'Closing chart element
         strXML.Append("</chart>")
 
 
-        'outPut will store the HTML of the chart rendered as string 
+        'the outPut variable will store the HTML of the chart rendered as string 
         Dim outPut As String = ""
 
-        'When the page is loaded for the first time, we call RenderChart() method to avoid IE's 'Click here to Acrtivate...' message
+        'When the page was loaded for the first time, we call the RenderChart() method to avoid
+        'IE's Click here to Activate... message
         Dim sales As New Chart("column2d", "myChart", "440", "350", "xml", strXML.ToString())
         outPut = sales.Render()
 
-        'Clear panel which will contain the chart
+        'Clearing the panel which will contain the chart
         Panel1.Controls.Clear()
 
-        'Add Litaral control to Panel which adds the chart from outPut string
+        'Add Litaral control to the Panel which adds the chart from outPut string
         Panel1.Controls.Add(New LiteralControl(outPut))
 
         ' close Data Reader

@@ -5,9 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>FusionCharts - using Master Pages</title>
-
+    <!-- FusionCharts script tag -->
     <script type="text/javascript"  src="../../fusioncharts/fusioncharts.js"></script>
-
+    <!-- End --> 
+    
     <style type="text/css">
         h2.headline
         {

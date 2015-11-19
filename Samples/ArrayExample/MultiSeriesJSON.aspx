@@ -7,6 +7,7 @@
     <title>FusionCharts - Simple</title>
     <!-- FusionCharts script tag -->
     <script type="text/javascript" src="../../fusioncharts/fusioncharts.js"></script>
+    <!-- End --> 
 </head>
 <body>
     <div style="text-align:center">

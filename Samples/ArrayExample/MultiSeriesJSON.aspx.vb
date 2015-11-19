@@ -98,7 +98,7 @@ Partial Class Samples_ArrayExample_MultiSeriesJSON
         jsonData.Append(previousYear.ToString())
         jsonData.Append("]" + "}")
 
-        ' Initialize chart - Column 3D Chart with data from Data/Data.json
+        ' Initialize chart - Multi-series Line 2D Chart with data from Data/Data.json
         Dim sales As New Chart("msline", "myChart", "600", "350", "json", jsonData.ToString())
         ' Render the chart
         Literal1.Text = sales.Render()

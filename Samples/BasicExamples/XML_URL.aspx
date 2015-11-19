@@ -7,6 +7,7 @@
     <title>Basic FusionCharts population using XML URL</title>
     <!-- FusionCharts script tag -->
     <script type="text/javascript" src="../../fusioncharts/fusioncharts.js"></script>
+    <!-- End --> 
 </head>
 <body>
     Fusioncharts will render below
