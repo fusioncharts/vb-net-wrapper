@@ -2,7 +2,7 @@
 
 ### What is FusionCharts .NET wrapper?
 
-FusionCharts Suite XT uses JavaScript to generate charts in the browser. Where using these ASP.NET server side wrapper you can create charts in your ASP.NET website without writing any Javascript code. 
+FusionCharts Suite XT uses JavaScript to generate charts in the browser. Where using these ASP.NET server side wrapper you can create charts in your ASP.NET website without writing any Javascript code. You will find the wrapper class file inside App_Code folder as FusionCharts.vb
 
 ### How does the wrapper work?
 Charts are generated in the browsers with the help of JavaScript and the HTML code.
