@@ -220,6 +220,10 @@ Namespace FusionCharts.Charts
 
             Dim chartConfigJSON As String = fc_encodeJSON(GetConfigurationGroup("params"), True)
 
+            ' Removes the extra trailing commas in generated JavaScript Object
+            Dim Place As Integer = chartConfigJSON.LastIndexOf(","c)
+            chartConfigJSON = If((Place >= 0), chartConfigJSON.Remove(Place, 1).Insert(Place, ""), chartConfigJSON)
+
             builder.Append("<script type=""text/javascript"">" + Environment.NewLine)
             builder.Append("FusionCharts && FusionCharts.ready(function () {" + Environment.NewLine)
             builder.AppendFormat("if (FusionCharts(""{0}"") ) FusionCharts(""{0}"").dispose();" & vbLf, chartId)
@@ -663,6 +667,10 @@ Namespace InfoSoftGlobal
             Dim dataSource As String = (If(dataStr = "", dataUrl, dataStr.Replace(vbLf & vbCr, "")))
             Dim dataSourceJSON As String = """dataSource"" : " + (If(dataFormat = "json", dataSource, (Convert.ToString("""") & dataSource) + """"))
             Dim chartConfigJSON As String = (Convert.ToString((Convert.ToString("{") & fc_encodeJSON(GetConfigurationGroup(__CONFIGCLONE__, "params"), False)) + ",") & dataSourceJSON) + "}"
+
+            ' Removes the extra trailing commas in generated JavaScript Object
+            Dim Place As Integer = chartConfigJSON.LastIndexOf(","c)
+            chartConfigJSON = If((Place >= 0), chartConfigJSON.Remove(Place, 1).Insert(Place, ""), chartConfigJSON)
 
             Dim builder As New StringBuilder()
             builder.AppendFormat("<!-- Using ASP.NET FusionCharts v3.2.2.1 Wrapper and JavaScript rendering --><!-- START Script Block for Chart {0} -->" + Environment.NewLine, chartId)
