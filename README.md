@@ -15,15 +15,15 @@ Conventionally, FusionCharts Suite XT uses JavaScript and HTML to generate chart
 .NET Framework 3.5 or higher
 
 ### Installation
- * Download the **[`ASP vb wrapper package`](https://github.com/fusioncharts/vb-net-wrapper/archive/master.zip)**
- * Unzip the archive and move to "vb-net-wrapper-master/App_Code/" folder to get the "FusionCharts.vb" file.
- * To add the file inside your project right click the project name from "Solution Explorer" and select "Add->Existing item". Don't forget to select the file type as "Code Files" from the file explorer window that appears. Select the "FusionCharts.vb" file from the explorer and click "Add".
+ ** Download the **[fusioncharts-suite-xt](http://www.fusioncharts.com/)**
+ * Unzip the archive and move to "integrations > asp.net-vb > fusioncharts-wrapper-source" to get the "FusionCharts.vb" file.
+ * Copy "FusionCharts.vb" to App_code folder inside your project.
  
-### Usage
-#### Installing FusionCharts JS libraries in your page where you want to display FusionCharts
-There are two ways you can install the FusionCharts JS libray in your project
-* Using FusionCharts CDN
-* Using library files placed in the folder of your project
+ or you can add dll file reference in your project
+ 
+ * Download the **[fusioncharts-suite-xt](http://www.fusioncharts.com/)**
+ * Unzip the archive and move to "integrations > asp.net-vb > fusioncharts-wrapper-assembly" to get the "FusionCharts.dll" file.
+ * Add reference to your project.
 
 **Using FusionCharts CDN**
 
@@ -43,7 +43,7 @@ Now, you are ready to prepare the chart using our ASP-vb-wrapper.
 
 #### Using the wrapper
 #### Step 1:
-**Include the wrapper file (`FusionCharts.vb`) to your VB page:**
+**Include the wrapper source file (`FusionCharts.vb`) or wrapper dll file (`FusionCharts.dll`) to your VB page:**
 
 * Include the package inside your project (See [Installation Guide](#Installation))
 * Add the reference of the file to the page where you want to display FusionCharts. To do so write the following code befor the class description begins of your page.
