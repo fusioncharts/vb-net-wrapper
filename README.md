@@ -139,6 +139,26 @@ This is a public method used to generate the html code for rendering a chart. Th
 |bgColor | `String` | Background color of the chart container. e.g. `cccccc`|
 |bgOpacity | `String` | Background opacity of the chart container. e.g. `1`|
 
+###### **AddEvent**
+This is a public method used to generate the html code to add an event to a chart. This function assumes that you've already included the FusionCharts JavaScript class in your page. The following parameters have to be passed in order to attach event function.
+
+| Parameter | Type | Description |
+|:-------|:----------:| :------|
+| eventName | `String` | which event you want to bind. e.g. `dataLoaded`.|
+|funcName | `String` | javascript function, which is written in your client side code|
+
+chartObj.AddEvent("dataLoaded", "onDataLoaded")
+
+###### **AddMessage**
+This is a public method used to generate the html code to attach an event to a chart. This function assumes that you’ve already included the FusionCharts JavaScript class in your page. The following parameters have to be passed in order to attach event through addEvent function.
+
+| Parameter | Type | Description |
+|:-------|:----------:| :------|
+| messageAttribute | `String` |  parameter want to customize. e.g. `loadMessage`.|
+|messageAttributeValue | `String` | Your custom message|
+
+chartObj.AddMessage("loadMessage", "please wait data is being loaded")
+
 ###### **Clone**
 This method is used to clone an existing chart instance. All properties except the chartId of the parent chart instance will be cloned into the child instance. 
 ```cs
