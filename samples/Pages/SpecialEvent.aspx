@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="SpecialEvent.aspx.cs" Inherits="Pages_SpecialEvent" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="SpecialEvent.aspx.vb" Inherits="Pages_SpecialEvent" %>
 
 <!DOCTYPE html>
 

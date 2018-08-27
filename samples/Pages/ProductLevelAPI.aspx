@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ProductLevelAPI.aspx.cs" Inherits="Pages_ProductLevelAPI" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="ProductLevelAPI.aspx.vb" Inherits="Pages_ProductLevelAPI" %>
 
 <!DOCTYPE html>
 

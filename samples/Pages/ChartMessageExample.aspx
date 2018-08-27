@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ChartMessageExample.aspx.cs" Inherits="Pages_ChartMessageExample" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="ChartMessageExample.aspx.vb" Inherits="Pages_ChartMessageExample" %>
 
 <!DOCTYPE html>
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="NumberFormatModule.aspx.cs" Inherits="Pages_NumberFormatModule" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="NumberFormatModule.aspx.vb" Inherits="Pages_NumberFormatModule" %>
 
 <!DOCTYPE html>
 

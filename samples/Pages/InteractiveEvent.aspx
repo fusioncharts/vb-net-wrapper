@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="InteractiveEvent.aspx.cs" Inherits="Pages_InteractiveEvent" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="InteractiveEvent.aspx.vb" Inherits="Pages_InteractiveEvent" %>
 
 <!DOCTYPE html>
 

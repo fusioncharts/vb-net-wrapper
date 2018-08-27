@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ChartInstanceLevelAPI.aspx.cs" Inherits="Pages_ChartInstanceLevelAPI" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="ChartInstanceLevelAPI.aspx.vb" Inherits="Pages_ChartInstanceLevelAPI" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link href="../Styles/SampleStyleSheet.css" rel="stylesheet" />
-    <style>
+     <style>
     input[type=radio], input[type=checkbox] {
 		display:none;
 	}

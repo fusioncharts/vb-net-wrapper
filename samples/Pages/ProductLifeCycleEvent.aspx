@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ProductLifeCycleEvent.aspx.cs" Inherits="Pages_ProductLifeCycleEvent" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="ProductLifeCycleEvent.aspx.vb" Inherits="Pages_ProductLifeCycleEvent" %>
 
 <!DOCTYPE html>
 

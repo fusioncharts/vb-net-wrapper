@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="SpecialChartTypeAPI.aspx.cs" Inherits="Pages_SpecialChartTypeAPI" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="SpecialChartTypeAPI.aspx.vb" Inherits="Pages_SpecialChartTypeAPI" %>
 
 <!DOCTYPE html>
 
@@ -45,22 +45,22 @@
              <asp:Literal ID="Literal1" runat="server"></asp:Literal>     
         </div>
         <div id="controllers" align="center" style="font-family:'Helvetica Neue', Arial; font-size: 14px;">
-        <label style="padding: 0px 5px !important;">
-            <input type="radio" name="rdGrp-options" checked="checked" onclick="noneChecked()"/> None
-        </label>
-        <label style="padding: 0px 5px !important;">
-            <input type="radio" name="rdGrp-options" onclick="apacheChecked()"/> Apache
-        </label>
-        <label style="padding: 0px 5px !important;">
-                <input type="radio" name="rdGrp-options" onclick="microsoftChecked()"/> Microsoft
-        </label>
-        <label style="padding: 0px 5px !important;">
-            <input type="radio" name="rdGrp-options" onclick="zeusChecked()"/> Zeus
-        </label>
-        <label style="padding: 0px 5px !important;">
-            <input type="radio" name="rdGrp-options" onclick="otherChecked()"/> Other
-        </label>        
-    </div>
+            <label style="padding: 0px 5px !important;">
+                <input type="radio" name="rdGrp-options" checked="checked" onclick="noneChecked()"/> None
+            </label>
+            <label style="padding: 0px 5px !important;">
+                <input type="radio" name="rdGrp-options" onclick="apacheChecked()"/> Apache
+            </label>
+            <label style="padding: 0px 5px !important;">
+                    <input type="radio" name="rdGrp-options" onclick="microsoftChecked()"/> Microsoft
+            </label>
+            <label style="padding: 0px 5px !important;">
+                <input type="radio" name="rdGrp-options" onclick="zeusChecked()"/> Zeus
+            </label>
+            <label style="padding: 0px 5px !important;">
+                <input type="radio" name="rdGrp-options" onclick="otherChecked()"/> Other
+            </label>        
+        </div>
 	<br/>
         <div><span><asp:HyperLink id="hyperlink1" NavigateUrl="../Default.aspx" Text="Go Back" runat="server"/></span></div>
     </form>

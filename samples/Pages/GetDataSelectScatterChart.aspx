@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="GetDataSelectScatterChart.aspx.cs" Inherits="Pages_GetDataSelectScatterChart" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="GetDataSelectScatterChart.aspx.vb" Inherits="Pages_GetDataSelectScatterChart" %>
 
 <!DOCTYPE html>
 
@@ -99,5 +99,4 @@
    
     
 </body>
-
 </html>
