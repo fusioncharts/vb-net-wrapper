@@ -15,6 +15,7 @@ Namespace FusionCharts.Charts
         'Implements System.ICloneable
         Private __CONFIG__ As Hashtable = Nothing
         Private Shared __PARAMMAP__ As Hashtable = Nothing
+        Private events As String = ""
 
         ''' <summary>
         ''' User configurable chart parameter list 
@@ -228,6 +229,7 @@ Namespace FusionCharts.Charts
             builder.Append("FusionCharts && FusionCharts.ready(function () {" + Environment.NewLine)
             builder.AppendFormat("if (FusionCharts(""{0}"") ) FusionCharts(""{0}"").dispose();" & vbLf, chartId)
             builder.AppendFormat("var chart_{0} = new FusionCharts({1}).render();" + Environment.NewLine, chartId, chartConfigJSON)
+            builder.Append(events)
             builder.Append("});" + Environment.NewLine)
             builder.Append("</script>" + Environment.NewLine)
             builder.AppendFormat("<!-- END Script Block for Chart {0} -->" + Environment.NewLine, chartId)
@@ -239,6 +241,27 @@ Namespace FusionCharts.Charts
 #End Region
 
 #Region "Public Methods"
+		' <summary>
+        ' public method to attach event from client side
+        ' </summary>
+        ' <param name="eventName"></param>
+        ' <param name="funcName"></param>
+        Public Sub AddEvent(ByVal eventName As String, ByVal funcName As String)
+            Dim eventHTML As String
+            Dim chartId As String = GetChartParameter("id")
+            eventHTML = String.Format("FusionCharts(""{0}"").addEventListener(""{1}"",{2});" & Environment.NewLine, chartId, eventName, funcName)
+            events += eventHTML
+        End Sub
+		' <summary>
+        ' public method to add attributes for message customization
+        ' </summary>
+        ' <param name="messageAttribute"></param>
+        ' <param name="messageAttributeValue"></param>
+        Public Sub AddMessage(ByVal messageAttribute As String, ByVal messageAttributeValue As String)
+            Dim messageHTML As String
+            messageHTML = String.Format("{0}:""{1}"",", messageAttribute, messageAttributeValue)
+            SetChartParameter("message", messageHTML)
+        End Sub
         ''' <summary>
         ''' Public method to clone an exiting FusionCharts instance
         ''' To make the chartId unique, this function will add "_clone" as suffix in the clone chart's Id.
@@ -483,7 +506,11 @@ Namespace FusionCharts.Charts
         ''' <param name="value">Value of configuration</param>
         Private Sub SetChartParameter(setting As String, value As Object)
             If DirectCast(__CONFIG__("params"), Hashtable).ContainsKey(setting) Then
-                DirectCast(__CONFIG__("params"), Hashtable)(setting) = value
+                If setting.Equals("message", StringComparison.InvariantCultureIgnoreCase) Then
+                    DirectCast(__CONFIG__("params"), Hashtable)(setting) += value.ToString()
+                Else
+                    DirectCast(__CONFIG__("params"), Hashtable)(setting) = value
+                End If
             End If
         End Sub
 
@@ -495,6 +522,7 @@ Namespace FusionCharts.Charts
                 __PARAMMAP__("chartId") = "id"
                 __PARAMMAP__("chartWidth") = "width"
                 __PARAMMAP__("chartHeight") = "height"
+                __PARAMMAP__("message") = "message"
                 __PARAMMAP__("dataFormat") = "dataFormat"
                 __PARAMMAP__("dataSource") = "dataSource"
                 __PARAMMAP__("renderAt") = "renderAt"
@@ -510,6 +538,7 @@ Namespace FusionCharts.Charts
             param("type") = ""
             param("width") = ""
             param("height") = ""
+            param("message") = ""
             param("renderAt") = ""
             param("dataSource") = ""
             param("dataFormat") = ""
@@ -558,10 +587,15 @@ Namespace FusionCharts.Charts
                         If Not (Value.StartsWith("{") AndAlso Value.EndsWith("}")) Then
                             Value = (Convert.ToString("""") & Value) + """"
                         End If
+                        strjson = (Convert.ToString((Convert.ToString(strjson + Environment.NewLine & Convert.ToString("""")) & Key) + """ : ") & Value) + ", "
+                    ElseIf Key.ToLower().Equals("message") Then
+                        strjson = strjson + Environment.NewLine + Value.ToString()
+
                     Else
                         Value = (Convert.ToString("""") & Value) + """"
+                        strjson = (Convert.ToString((Convert.ToString(strjson + Environment.NewLine & Convert.ToString("""")) & Key) + """ : ") & Value) + ", "
                     End If
-                    strjson = (Convert.ToString((Convert.ToString(strjson + Environment.NewLine & Convert.ToString("""")) & Key) + """ : ") & Value) + ", "
+
                 ElseIf ds.Key.ToString().Equals("renderAt") Then
                     strjson = (strjson + Environment.NewLine & Convert.ToString("""renderAt"" : """)) + DirectCast(json, Hashtable)("id").ToString() + "_div"", "
                 End If
