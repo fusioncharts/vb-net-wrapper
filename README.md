@@ -173,7 +173,4 @@ Literal2.Text = salesClone.Render();
 
 ### License
 
-**FUSIONCHARTS:**
-
-Copyright (c) FusionCharts, Inc.  
-License Information at [http://www.fusioncharts.com/license](http://www.fusioncharts.com/license)
+The FusionCharts VB.NET integration component is open-source and distributed under the terms of the MIT/X11 License. However, you will need to download and include FusionCharts library in your page separately, which has a [separate license](https://www.fusioncharts.com/buy).
